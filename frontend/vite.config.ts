@@ -1,17 +1,14 @@
-import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0',
-    port: 3000,
+    port: 3001,
   },
   preview: {
     host: '0.0.0.0',
-    port: 3000,
-  },
-  define: {
-    'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL || 'http://localhost:4000/api'),
+    port: 3001,
   },
 })

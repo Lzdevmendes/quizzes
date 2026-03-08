@@ -16,4 +16,4 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/tsconfig.json ./
 EXPOSE 4000
-CMD ["sh", "-c", "npx prisma db push --accept-data-loss && node dist/main"]
+CMD ["sh", "-c", "npx prisma db push --accept-data-loss && npx ts-node prisma/seed.ts && node dist/main"]
